@@ -1,0 +1,63 @@
+---
+title: "Test"
+author: "Siyu Zhu"
+date: "9/19/2018"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+
+```{r setup, include=FALSE}
+library(reticulate)
+library(prettydoc)
+# use_python("/usr/local/bin/python3")
+use_condaenv("tensorflow")	#Specify the name of a Conda environment.
+knitr::knit_engines$set(python = reticulate::eng_python)
+knitr::opts_chunk$set(echo = TRUE)
+# Sys.setenv(python = '/anaconda3/envs/tensorflow/bin/python')
+```
+
+```{python}
+import pandas as pd
+import numpy as np
+import sys
+import tensorflow as tf
+import matplotlib.pyplot as plt
+# matplotlib.use('TkAgg')
+print('Python version ' + sys.version)
+print('Pandas version ' + pd.__version__)
+```
+
+
+```{python}
+from wordcloud import WordCloud, ImageColorGenerator
+hm_data = pd.read_csv("../data/cleaned_hm.csv")
+df_hm = hm_data[hm_data['cleaned_hm'].notnull()]
+text = ' '.join(df_hm['cleaned_hm'].tolist())
+text = text.lower()
+wordcloud = WordCloud(background_color="white", font_path='../../../Library/Fonts/Arial.ttf', \
+                          height=2700, width=3600).generate(text)
+plt.figure( figsize=(14,8) )
+plt.imshow(wordcloud.recolor(colormap=plt.get_cmap('Set2')), interpolation='bilinear')
+plt.axis("off")
+plt.show()
+```
+
+```{python}
+LIMIT_WORDS = ['happy', 'day', 'got', 'went', 'today', 'made', 'one', 'two', 'time', 'last', 'first', 'going', 'getting', 'took', 'found', 'lot', 'really', 'saw', 'see', 'month', 'week', 'day', 'yesterday', 'year', 'ago', 'now', 'still', 'since', 'something', 'great', 'good', 'long', 'thing', 'toi', 'without', 'yesteri', '2s', 'toand', 'ing']
+
+text = ' '.join(df_hm['cleaned_hm'].tolist())
+text = text.lower()
+for w in LIMIT_WORDS:
+    text = text.replace(' ' + w, '')
+    text = text.replace(w + ' ', '')
+wordcloud = WordCloud(background_color="white", font_path='../../../Library/Fonts/Arial.ttf', \
+                          height=2700, width=3600).generate(text)
+plt.figure( figsize=(14,8) )
+plt.imshow(wordcloud.recolor(colormap=plt.get_cmap('Set2')), interpolation='bilinear')
+plt.axis("off")
+plt.show()
+```
+

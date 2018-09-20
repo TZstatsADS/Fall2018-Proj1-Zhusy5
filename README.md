@@ -9,10 +9,17 @@ This is the first and only *individual* (as opposed to *team*) this semester.
 
 Term: Fall 2018
 
-+ Projec title: Lorem ipsum dolor sit amet
-+ This project is conducted by [your name]
++ Projec title: Happiness Distribution and Reasons
++ This project is conducted by Siyu Zhu
 
-+ Project summary: [a short summary] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
++ Project summary: 
+
+	+ This project is inspired by the Satisfaction With Life Scale (SWLS) theory, I want to explore the reasons and distributions of people's happiness, WHAT makes people happy.
+
+	+ I dig into the purchase tendency (PT), and measure the purchase tendency using the frequency of purchase conduction appeared in the happydb. By comparing the purchase tendency between different cluters of users, it s interesting that the PT factor differ significantly in different gender and marital groups.
+
+	+ Then, I want to illustrate how marriage influenece people's happiness. Here, I try to use happy moments text features to classify users. And a logistic regression model is fitted and tested here.
+
 
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
 
