@@ -20,6 +20,8 @@ Term: Fall 2018
 
 	+ Then, I want to illustrate how marriage influenece people's happiness. Here, I try to use happy moments text features to classify users. And a logistic regression model is fitted and tested here.
 
+	+ Then final output is `/output/HappyDB\_analysis.html`. And all the source code and Rmd is in the `/doc/HappyDB\_analysis.Rmd`.
+
 
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
 
